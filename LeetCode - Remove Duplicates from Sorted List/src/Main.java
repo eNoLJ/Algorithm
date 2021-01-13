@@ -6,7 +6,7 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
 
-    public class Main {
+ public class Main {
 
     public ListNode deleteDuplicates(ListNode head) {
         ListNode node = head;
