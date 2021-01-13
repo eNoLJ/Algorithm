@@ -11,18 +11,13 @@ public class Main {
 
         String strNum = String.valueOf(longNum);
         String reverseStrNum = new StringBuffer(strNum).reverse().toString();
+        longNum = Long.parseLong(reverseStrNum) * minus;
 
-        if (minus > 0) {
-            if (Integer.MAX_VALUE < Long.parseLong(reverseStrNum)) {
-                return 0;
-            }
-        } else {
-            if (Integer.MIN_VALUE > Long.parseLong(reverseStrNum) * minus) {
-                return 0;
-            }
+        if (Integer.MIN_VALUE > longNum || longNum > Integer.MAX_VALUE) {
+            return 0;
         }
 
-        return Integer.parseInt(reverseStrNum) * minus;
+        return (int)longNum;
     }
 
     public static void main(String[] args) {
