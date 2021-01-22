@@ -3,26 +3,11 @@ import java.util.Arrays;
 public class Solution {
 
     public static int[] solution(int[] array, int[][] commands) {
-        int[] answer = new int[commands.length];
-
-        for (int i = 0; i < commands.length; i++) {
-            int start = commands[i][0] - 1;
-            int end = commands[i][1];
-            int kth = commands[i][2] - 1;
-
-            int[] copyCommand = Arrays.copyOfRange(array, start, end);
+        return Arrays.stream(commands).mapToInt(command -> {
+            int[] copyCommand = Arrays.copyOfRange(array, command[0] - 1, command[1]);
             Arrays.sort(copyCommand);
-            answer[i] = copyCommand[kth];
-        }
-
-//        Arrays.stream(commands).map(command -> {
-//            int[] copyCommand = Arrays.copyOfRange(array, command[0] - 1, command[1]);
-//            Arrays.sort(copyCommand);
-//            return copyCommand[command[2] - 1];
-//        });
-
-        return answer;
-
+            return copyCommand[command[2] - 1];
+        }).toArray();
     }
 
     public static void main(String[] args) {
