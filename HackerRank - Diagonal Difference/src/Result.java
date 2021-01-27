@@ -4,13 +4,12 @@ import java.util.List;
 public class Result {
 
     public static int diagonalDifference(List<List<Integer>> arr) {
-        int size = arr.size();
         int lTrNum = 0;
         int rTlNum = 0;
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < arr.size(); i++) {
             lTrNum += arr.get(i).get(i);
-            rTlNum += arr.get(i).get(size - i - 1);
+            rTlNum += arr.get(i).get(arr.size() - i - 1);
         }
 
         return Math.abs(lTrNum - rTlNum);
@@ -22,7 +21,7 @@ public class Result {
         List<Integer> c = new ArrayList<>() { {add(10); add(8); add(-12);} };
         List<List<Integer>> List = new ArrayList<>() { {add(a); add(b); add(c);} };
 
-        System.out.println(diagonalDifference(List));
+        System.out.println(diagonalDifference(List)); // 15
     }
 
 }
