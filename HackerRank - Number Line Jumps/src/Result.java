@@ -1,16 +1,13 @@
 public class Result {
 
     static String kangaroo(int x1, int v1, int x2, int v2) {
-        int[] frontKangaroo = x1 >= x2 ? new int[] {x1, v1} : new int[] {x2, v2};
-        int[] backKangaroo = x1 >= x2 ? new int[] {x2, v2} : new int[] {x1, v1};
-
-        while (frontKangaroo[0] >= backKangaroo[0]) {
-            if (frontKangaroo[0] == backKangaroo[0]) {
+        while (x1 <= x2) {
+            if (x1 == x2) {
                 return "YES";
             }
 
-            frontKangaroo[0] += frontKangaroo[1];
-            backKangaroo[0] += backKangaroo[1];
+            x1 += v1;
+            x2 += v2;
         }
 
         return "NO";
