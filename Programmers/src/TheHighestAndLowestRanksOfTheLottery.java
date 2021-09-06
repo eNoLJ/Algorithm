@@ -28,6 +28,6 @@ public class TheHighestAndLowestRanksOfTheLottery {
         int[][] win_nums = new int[][]{{31, 10, 45, 1, 6, 19}, {38, 19, 20, 40, 15, 25}, {20, 9, 3, 45, 4, 35}};
         int[][] expectedResult = new int[][]{{3, 5}, {1, 6}, {1, 1}};
         IntStream.range(0, expectedResult.length)
-                .forEach(i -> assertThat(expectedResult[i]).isEqualTo(solution(lottos[i], win_nums[i])));
+                .forEach(i -> assertThat(solution(lottos[i], win_nums[i])).isEqualTo(expectedResult[i]));
     }
 }

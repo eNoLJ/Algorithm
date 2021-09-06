@@ -75,6 +75,6 @@ public class KeypadPress {
         String[] hands = {"right", "left", "right"};
         String[] expectedResult = {"LRLLLRLLRRL", "LRLLRRLLLRR", "LLRLLRLLRL"};
         IntStream.range(0, expectedResult.length)
-                .forEach(i -> assertThat(expectedResult[i]).isEqualTo(solution(numbers[i], hands[i])));
+                .forEach(i -> assertThat(solution(numbers[i], hands[i])).isEqualTo(expectedResult[i]));
     }
 }
