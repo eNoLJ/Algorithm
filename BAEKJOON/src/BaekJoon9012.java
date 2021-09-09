@@ -29,8 +29,7 @@ public class BaekJoon9012 {
     @Test
     public void test() {
         String input;
-        OutputStream out;
-        InputStream in;
+        String result;
 
         input = "6\n" +
                 "(())())\n" +
@@ -39,32 +38,30 @@ public class BaekJoon9012 {
                 "((()()(()))(((())))()\n" +
                 "()()()()(()()())()\n" +
                 "(()((())()(";
-        out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-        in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-        main(new String[]{});
-        Assertions.assertThat(out.toString()).isEqualTo(
-                "NO\n" +
+        result = "NO\n" +
                 "NO\n" +
                 "YES\n" +
                 "NO\n" +
                 "YES\n" +
-                "NO\n");
-
+                "NO\n";
+        Assertions.assertThat(run(input)).isEqualTo(result);
 
         input = "3\n" +
                 "((\n" +
                 "))\n" +
                 "())(()";
-        out = new ByteArrayOutputStream();
+        result = "NO\n" +
+                "NO\n" +
+                "NO\n";
+        Assertions.assertThat(run(input)).isEqualTo(result);
+    }
+
+    public String run(String input) {
+        OutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        in = new ByteArrayInputStream(input.getBytes());
+        InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         main(new String[]{});
-        Assertions.assertThat(out.toString()).isEqualTo(
-                "NO\n" +
-                "NO\n" +
-                "NO\n");
+        return out.toString();
     }
 }
