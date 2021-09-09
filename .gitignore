@@ -137,9 +137,12 @@ gradle-app.setting
 
 /.idea/.gitignore
 /.idea/Algorithm.iml
-/BAEKJOON/BAEKJOON.iml
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/uiDesigner.xml
 /.idea/vcs.xml
 /.idea/runConfigurations.xml
+/BAEKJOON/BAEKJOON.iml
+/HackerRank/HackerRank.iml
+/LeetCode/LeetCode.iml
+/Programmers/Programmers.iml
