@@ -21,8 +21,8 @@ public class IHateTheSameNumber {
     @Test
     public void test() {
         SoftAssertions.assertSoftly(softly -> {
-            softly.assertThat(solution(new int[]{1,1,3,3,0,1,1})).isEqualTo(solution(new int[]{1,3,0,1}));
-            softly.assertThat(new int[]{4,4,4,3,3}).isEqualTo(solution(new int[]{4,3}));
+            softly.assertThat(solution(new int[]{1,1,3,3,0,1,1})).isEqualTo(new int[]{1,3,0,1});
+            softly.assertThat(solution(new int[]{4,4,4,3,3})).isEqualTo(new int[]{4,3});
         });
     }
 }
