@@ -5,8 +5,6 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
-
 public class BaekJoon1107 {
 
     public static void main(String[] args) {
